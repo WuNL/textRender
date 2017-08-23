@@ -33,6 +33,9 @@ GLuint VAO, VBO;
 
 void RenderText(Shader &shader, std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color);
 
+
+
+
 // The MAIN function, from here we start our application and run the Game loop
 int main()
 {
@@ -72,7 +75,7 @@ int main()
 
     // Load font as face
     FT_Face face;
-    if (FT_New_Face(ft, "/usr/share/fonts/truetype/ubuntu-font-family/UbuntuMono-BI.ttf", 0, &face))
+    if (FT_New_Face(ft, "/home/wnl/workspace/textRender/SourceHanSerifCN-Bold.otf", 0, &face))
         std::cout << "ERROR::FREETYPE: Failed to load font" << std::endl;
 
     // Set size to load glyphs as
@@ -85,7 +88,10 @@ int main()
     for (GLubyte c = 0; c < 128; c++)
     {
         // Load character glyph
-        if (FT_Load_Char(face, c, FT_LOAD_RENDER))
+        setlocale(LC_ALL,"zh_CN.GB18030");
+        const char g_UnicodeString[]="aaa VB文件格式：/n/若不明确就标为未知/n/表演者：";
+        wchar_t wcstr[20] = L"字符测试123abc";
+        if (FT_Load_Char(face, wcstr[2], FT_LOAD_RENDER))
         {
             std::cout << "ERROR::FREETYTPE: Failed to load Glyph" << std::endl;
             continue;
