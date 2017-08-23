@@ -23,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=c++11" />
 					<Add directory="include" />
 					<Add directory="/usr/local/include/freetype2" />
 				</Compiler>
@@ -32,6 +33,8 @@
 					<Add option="-lX11 -lpng" />
 					<Add library="libdl" />
 					<Add library="/usr/local/lib/libfreetype.a" />
+					<Add library="libpng" />
+					<Add library="libz" />
 					<Add directory="/usr/lib64" />
 				</Linker>
 			</Target>
@@ -40,9 +43,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/GLSLShader.h" />
+		<Unit filename="include/Shader.h" />
+		<Unit filename="include/textRender.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/GLSLShader.cpp" />
+		<Unit filename="src/Shader.cpp" />
+		<Unit filename="src/textRender.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

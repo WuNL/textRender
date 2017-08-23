@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1503479469 source:/home/wnl/workspace/textRender/main.cpp
+1503500881 source:/home/wnl/workspace/textRender/main.cpp
 	<iostream>
 	<map>
 	<string>
@@ -10,6 +10,7 @@
 	<glm/gtc/type_ptr.hpp>
 	<ft2build.h>
 	"Shader.h"
+	"textRender.h"
 
 1503451573 /usr/local/include/freetype2/ft2build.h
 	<freetype/config/ftheader.h>
@@ -35,4 +36,11 @@
 	<sstream>
 	<iostream>
 	<GL/glew.h>
+
+1503498927 /home/wnl/workspace/textRender/include/textRender.h
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<ft2build.h>
+	"Shader.h"
 
