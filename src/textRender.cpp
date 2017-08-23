@@ -8,6 +8,7 @@ textRender::textRender(int window_width, int window_height, const char* path):sh
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+    glGenTextures(1, &texture);
     // Configure VAO/VBO for texture quads
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -36,20 +37,19 @@ textRender::textRender(int window_width, int window_height, const char* path):sh
 textRender::~textRender()
 {
     //dtor
-        FT_Done_Face(face);
+    FT_Done_Face(face);
     FT_Done_FreeType(ft);
 }
 
-void textRender::fillChar(char c, Character& ch)
+void textRender::fillChar(wchar_t c, Character& ch)
 {
-        if (FT_Load_Char(face, (int)c, FT_LOAD_RENDER))
-        {
-            std::cout << "ERROR::FREETYTPE: Failed to load Glyph" << std::endl;
-            return;
-        }
-    // Generate texture
-    GLuint texture;
-    glGenTextures(1, &texture);
+    if (FT_Load_Char(face, c, FT_LOAD_RENDER))
+    {
+        std::cout << "ERROR::FREETYTPE: Failed to load Glyph" << std::endl;
+        return;
+    }
+
+
     glBindTexture(GL_TEXTURE_2D, texture);
     glTexImage2D(
         GL_TEXTURE_2D,
@@ -68,7 +68,8 @@ void textRender::fillChar(char c, Character& ch)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     // Now store character for later use
-    ch = {
+    ch =
+    {
         texture,
         glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
         glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
@@ -85,9 +86,11 @@ void textRender::RenderText(std::string text, GLfloat x, GLfloat y, GLfloat scal
     glActiveTexture(GL_TEXTURE0);
     glBindVertexArray(VAO);
 
+    std::wstring wide = converterX.from_bytes(text);
+
     // Iterate through all characters
-    std::string::const_iterator c;
-    for (c = text.begin(); c != text.end(); c++)
+    std::wstring::const_iterator c;
+    for (c = wide.begin(); c != wide.end(); c++)
     {
         Character ch;
         fillChar(*c,ch);
@@ -98,7 +101,8 @@ void textRender::RenderText(std::string text, GLfloat x, GLfloat y, GLfloat scal
         GLfloat w = ch.Size.x * scale;
         GLfloat h = ch.Size.y * scale;
         // Update VBO for each character
-        GLfloat vertices[6][4] = {
+        GLfloat vertices[6][4] =
+        {
             { xpos,     ypos + h,   0.0, 0.0 },
             { xpos,     ypos,       0.0, 1.0 },
             { xpos + w, ypos,       1.0, 1.0 },

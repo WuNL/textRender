@@ -56,8 +56,10 @@ int main()
         // Clear the colorbuffer
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        std::string s("123abc");
+        std::string s("d!($等等UI方法那边");
         tr.RenderText(s,(GLfloat)35.0f,(GLfloat)35.0f,1.0f, glm::vec3(0.5, 0.8f, 0.2f));
+        std::string s1("corn");
+        tr.RenderText(s1,(GLfloat)350.0f,(GLfloat)350.0f,1.0f, glm::vec3(0.5, 0.8f, 0.2f));
 
         // Swap the buffers
         glfwSwapBuffers(window);
