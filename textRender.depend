@@ -24,7 +24,7 @@
 	<iostream>
 	<GL/glew.h>
 
-1503505772 /home/wnl/workspace/textRender/include/textRender.h
+1503552788 /home/wnl/workspace/textRender/include/textRender.h
 	<glm/glm.hpp>
 	<glm/gtc/matrix_transform.hpp>
 	<glm/gtc/type_ptr.hpp>
@@ -32,10 +32,12 @@
 	"Shader.h"
 	<locale>
 	<codecvt>
+	<iostream>
+	<map>
 
 1503449687 source:/home/wnl/workspace/textRender/src/Shader.cpp
 	"Shader.h"
 
-1503505794 source:/home/wnl/workspace/textRender/src/textRender.cpp
+1503552778 source:/home/wnl/workspace/textRender/src/textRender.cpp
 	"textRender.h"
 

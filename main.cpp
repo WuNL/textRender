@@ -58,8 +58,16 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
         std::string s("d!($等等UI方法那边");
         tr.RenderText(s,(GLfloat)35.0f,(GLfloat)35.0f,1.0f, glm::vec3(0.5, 0.8f, 0.2f));
-        std::string s1("corn");
+        std::string s1("cornadawd色色是非");
         tr.RenderText(s1,(GLfloat)350.0f,(GLfloat)350.0f,1.0f, glm::vec3(0.5, 0.8f, 0.2f));
+        std::string s2("！@#");
+        tr.RenderText(s2,(GLfloat)30.0f,(GLfloat)100.0f,1.0f, glm::vec3(0.5, 0.8f, 0.2f));
+        tr.RenderText(s1,(GLfloat)350.0f,(GLfloat)350.0f,1.0f, glm::vec3(0.5, 0.8f, 0.2f));
+        tr.RenderText(s1,(GLfloat)350.0f,(GLfloat)350.0f,1.0f, glm::vec3(0.5, 0.8f, 0.2f));
+        tr.RenderText(s1,(GLfloat)350.0f,(GLfloat)350.0f,1.0f, glm::vec3(0.5, 0.8f, 0.2f));
+        tr.RenderText(s1,(GLfloat)350.0f,(GLfloat)350.0f,1.0f, glm::vec3(0.5, 0.8f, 0.2f));
+        tr.RenderText(s1,(GLfloat)350.0f,(GLfloat)350.0f,1.0f, glm::vec3(0.5, 0.8f, 0.2f));
+
 
         // Swap the buffers
         glfwSwapBuffers(window);
