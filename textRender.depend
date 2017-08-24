@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1503470051 source:/home/wnl/workspace/textRender/main.cpp
+1503505817 source:/home/wnl/workspace/textRender/main.cpp
 	<iostream>
 	<map>
 	<string>
@@ -10,24 +10,12 @@
 	<glm/gtc/type_ptr.hpp>
 	<ft2build.h>
 	"Shader.h"
+	"textRender.h"
 
 1503451573 /usr/local/include/freetype2/ft2build.h
 	<freetype/config/ftheader.h>
 
 1503451573 /usr/local/include/freetype2/freetype/config/ftheader.h
-
-1503468873 /home/wnl/workspace/textRender/include/GLSLShader.h
-	<GL/glew.h>
-	<map>
-	<string>
-
-1503468878 source:/home/wnl/workspace/textRender/src/GLSLShader.cpp
-	"GLSLShader.h"
-	<iostream>
-	<fstream>
-
-1503449687 source:/home/wnl/workspace/textRender/src/Shader.cpp
-	"Shader.h"
 
 1503449687 /home/wnl/workspace/textRender/include/Shader.h
 	<string>
@@ -35,4 +23,21 @@
 	<sstream>
 	<iostream>
 	<GL/glew.h>
+
+1503552788 /home/wnl/workspace/textRender/include/textRender.h
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<ft2build.h>
+	"Shader.h"
+	<locale>
+	<codecvt>
+	<iostream>
+	<map>
+
+1503449687 source:/home/wnl/workspace/textRender/src/Shader.cpp
+	"Shader.h"
+
+1503552778 source:/home/wnl/workspace/textRender/src/textRender.cpp
+	"textRender.h"
 
